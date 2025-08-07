@@ -6,6 +6,7 @@ const {auth,isSaloon}=require('../Middlewares/Authmiddleware')
 
 router.route("/createsalooninfo").post(auth,isSaloon,SaloonController.createsaloon)
 router.route("/updatesalooninfo/:id").put(auth,isSaloon,SaloonController.updatesaloon)
+router.route("/getallsaloon").get(SaloonController.getAllSaloons)
 
 router.route("/createcategory").post(auth,isSaloon,SaloonController.createcategory)
 router.route("/getallcategroyforsaloon").get(auth,isSaloon,SaloonController.getallacategoryforsaloon)

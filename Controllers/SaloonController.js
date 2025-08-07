@@ -144,6 +144,25 @@ exports.updatesaloon = async (req, res) => {
 };
 
 
+exports.getAllSaloons = async (req, res) => {
+  try {
+    const saloons = await Saloon.find().populate("saloonservices");
+
+    res.status(200).json({
+      success: true,
+      message: 'All saloons fetched successfully',
+      data: saloons,
+    });
+  } catch (error) {
+    console.error('Error fetching saloons:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to fetch saloons',
+      error: error.message,
+    });
+  }
+};
+
 
 
 

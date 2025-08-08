@@ -30,14 +30,11 @@ router.route("/createfaq").post(auth,isAdmin,Faqcontroller.createFAQ)
 router.route("/getallfaq").get(Faqcontroller.getAllActiveFAQs)
 router.route("/deletefaq/:id").delete(auth,isAdmin,Faqcontroller.deleteFAQ)
 router.route("/updatefaq/:id").put(auth,isAdmin,Faqcontroller.updateFAQ)
+router.route("/getsinglefaq/:id").get(auth,isAdmin,Faqcontroller.getFAQById)
 
 router.route("/createinfo").post(auth,isAdmin,Infocontroller.createinfo)
 router.route("/updateinfo/:id").put(auth,isAdmin,Infocontroller.updateinfo)
 router.route("/getinfo").get(Infocontroller.getInfo)
-
-
-
-
 
 
 

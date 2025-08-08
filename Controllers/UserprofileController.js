@@ -31,7 +31,7 @@ exports.getUserProfile = async (req, res) => {
         .json({ success: false, message: "User not found" });
     }
 
-    res.status(200).json({ success: true, data: user });
+    res.status(200).json({ success: true, userdata: user });
   } catch (err) {
     res
       .status(500)

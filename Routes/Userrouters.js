@@ -7,7 +7,7 @@ const Bookingcontroller=require("../Controllers/BookingController")
 
 
 router.route("/updateprofile").put(auth,isUser,Userprofile.updateUserProfile)
-router.route("/getuserprofile").get(auth,isUser,Userprofile.getUserProfile)
+router.route("/getuserprofile").get(auth,Userprofile.getUserProfile)
 
 router.route("/createrating").post(auth,isUser,Ratingcontroller.createReview)
 router.route("/updaterating/:reviewId").put(auth,isUser,Ratingcontroller.updateReview)
